@@ -154,7 +154,7 @@ select {
   --button-text: var(--clr-neutral-900);
   --dark-bg: var(--clr-neutral-900);
   --button-bg: var(--clr-light-salmon-50);
-  --featured-bg: var(--clr-light-salmon-100);
+  --featured-bg: var(--clr-neutral-100);
   --button-border: var(--clr-neutral-900);
   --button-border-inverse: var(--clr-neutral-0);
 
@@ -190,7 +190,6 @@ h1 {
   font-weight: 700;
   background-image: var(--gradient-text);
   background-clip: text;
-  display: inline-block;
   color: transparent;
 }
 
@@ -201,4 +200,93 @@ h2 {
 
 h3 {
   font-size: var(--fs-heading-small);
+}
+
+/* layout */
+
+.content-grid {
+  --content-max-width: 73rem;
+  --padding-inline: 1rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax(var(--padding-inline), 1fr)
+    [content-start]
+    min(100% - (var(--padding-inline) * 2), var(--content-max-width))
+    [content-end]
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
+
+  > * {
+    grid-column: content;
+  }
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+
+/* components */
+
+a[href="#"] {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-body-small);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  border: 2px solid var(--button-border);
+  padding-block: 1.25rem;
+  padding-inline: 1.5rem;
+
+  display: flex;
+  max-inline-size: fit-content;
+  gap: 1rem;
+}
+
+.social-proof {
+  --image-width: 110px;
+
+  display: grid;
+  grid-template-columns: var(--image-width) auto;
+  grid-template-rows: auto auto;
+  column-gap: 0.75rem;
+  max-inline-size: fit-content;
+
+  img {
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  span {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-body-xsmall);
+  }
+}
+
+.stars {
+  display: flex;
+}
+
+[data-bg="featured"] {
+  background-color: var(--featured-bg);
+  position: relative;
+
+  /* &::after {
+        content: "";
+    background-image: url("assets/images/pattern-glow.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    } */
+}
+
+[data-bg-pattern="grid"] {
+  background-image: url("assets/images/pattern-light-bg.svg");
 }

@@ -16,36 +16,42 @@
     <title>Frontend Mentor | Tech book club</title>
   </head>
   <body>
-    <div class="hero-surface">
+    <div class="content-grid" data-bg="featured" data-bg-pattern="grid">
       <header>
         <img src="assets/images/logo.svg" alt="tech book club logo" />
       </header>
 
-      <section>
-        <h1>Join the ultimate tech book club</h1>
-        <p>
-          Turn your reading time into learning time with fellow tech
-          enthusiasts. Get curated recommendations, join vibrant discussions,
-          and level up your skills one chapter at a time.
-        </p>
+      <section class="sidebar">
+        <div class="section-content">
+          <h1>Join the ultimate tech book club</h1>
 
-        <a href="#" class="btn">Review membership options</a>
+          <p>
+            Turn your reading time into learning time with fellow tech
+            enthusiasts. Get curated recommendations, join vibrant discussions,
+            and level up your skills one chapter at a time.
+          </p>
 
-        <div class="social-proof">
-          <img
-            src="assets/images/image-avatars.webp"
-            alt="profile pictures of members"
-          />
+          <a href="#" class="btn">
+            <span>Review membership options</span>
+            <img src="assets/images/icon-arrow-down.svg" alt="" />
+          </a>
 
-          <div class="start">
-            <img src="assets/images/icon-star.svg" alt="" />
-            <img src="assets/images/icon-star.svg" alt="" />
-            <img src="assets/images/icon-star.svg" alt="" />
-            <img src="assets/images/icon-star.svg" alt="" />
-            <img src="assets/images/icon-star.svg" alt="" />
+          <div class="social-proof">
+            <img
+              src="assets/images/image-avatars.webp"
+              alt="profile pictures of members"
+            />
+
+            <div class="stars">
+              <img src="assets/images/icon-star.svg" alt="" />
+              <img src="assets/images/icon-star.svg" alt="" />
+              <img src="assets/images/icon-star.svg" alt="" />
+              <img src="assets/images/icon-star.svg" alt="" />
+              <img src="assets/images/icon-star.svg" alt="" />
+            </div>
+
+            <span>200+ developers joined already</span>
           </div>
-
-          <p>200+ developers joined already</p>
         </div>
 
         <img
@@ -55,16 +61,18 @@
       </section>
     </div>
 
-    <main>
-      <section>
-        <h2>Read together, grow together</h2>
+    <main class="content-grid">
+      <section class="sidebar" data-layout="flipped">
+        <div class="section-content">
+          <h2>Read together, grow together</h2>
 
-        <ul>
-          <li>Monthly curated tech reads selected by industry experts</li>
-          <li>Virtual and in-person meetups for deep-dive discussions</li>
-          <li>Early access to new tech book releases</li>
-          <li>Author Q&A sessions with tech thought leaders</li>
-        </ul>
+          <ul>
+            <li>Monthly curated tech reads selected by industry experts</li>
+            <li>Virtual and in-person meetups for deep-dive discussions</li>
+            <li>Early access to new tech book releases</li>
+            <li>Author Q&A sessions with tech thought leaders</li>
+          </ul>
+        </div>
 
         <img
           src="assets/images/image-read-together-desktop.webp"
@@ -72,14 +80,16 @@
         />
       </section>
 
-      <section>
-        <h2>Not your average book club</h2>
+      <section class="sidebar">
+        <div class="section-content">
+          <h2>Not your average book club</h2>
 
-        <p>
-          Connect with a community that speaks your language - from Python to
-          TypeScript and everything in between. Our discussions blend technical
-          depth with practical applications.
-        </p>
+          <p>
+            Connect with a community that speaks your language - from Python to
+            TypeScript and everything in between. Our discussions blend
+            technical depth with practical applications.
+          </p>
+        </div>
 
         <img
           src="assets/images/image-not-average-desktop.webp"
@@ -87,7 +97,7 @@
         />
       </section>
 
-      <section>
+      <section data-bg="featured" data-bg-pattern="grid">
         <h2>Your tech reading journey</h2>
 
         <ol>
@@ -116,7 +126,7 @@
             </article>
           </li>
 
-          <li>
+          <li data-bg="featured">
             <article>
               <header>
                 <h3>Pro</h3>
@@ -147,7 +157,7 @@
       </section>
 
       <section>
-        <div class="start">
+        <div class="stars">
           <img src="assets/images/icon-star.svg" alt="" />
           <img src="assets/images/icon-star.svg" alt="" />
           <img src="assets/images/icon-star.svg" alt="" />
@@ -164,17 +174,21 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="content-grid">
       <div>
         <h2>Ready to debug your reading list?</h2>
-        <a href="#" class="btn">Review membership options</a>
+
+        <a href="#" class="btn">
+          <span>Review membership options</span>
+          <img src="assets/images/icon-arrow-up.svg" alt="" />
+        </a>
         <div class="social-proof">
           <img
             src="assets/images/image-avatars.webp"
             alt="profile pictures of members"
           />
 
-          <div class="start">
+          <div class="stars">
             <img src="assets/images/icon-star.svg" alt="" />
             <img src="assets/images/icon-star.svg" alt="" />
             <img src="assets/images/icon-star.svg" alt="" />
@@ -182,7 +196,7 @@
             <img src="assets/images/icon-star.svg" alt="" />
           </div>
 
-          <p>200+ developers joined already</p>
+          <span>200+ developers joined already</span>
         </div>
       </div>
 
@@ -193,10 +207,14 @@
 
         <ul>
           <li>
-            <a href="#">Facebook</a>
+            <a href="#">
+              <img src="assets/images/logo-bluesky.svg" alt="bluesky logo" />
+            </a>
           </li>
           <li>
-            <a href="#">Twitter</a>
+            <a href="#">
+              <img src="assets/images/logo-linkedin.svg" alt="linkedin logo" />
+            </a>
           </li>
         </ul>
       </div>

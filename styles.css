@@ -1,0 +1,204 @@
+/* Font imports */
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/inter/static/Inter_18pt-Regular.ttf")
+    format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/inter/static/Inter_18pt-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("./assets/fonts/martian-mono/static/MartianMono-Regular.ttf")
+    format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("./assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("./assets/fonts/martian-mono/static/MartianMono-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.2;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  --clr-neutral-900: hsl(194 79 11);
+  --clr-neutral-700: hsl(195 23 28);
+  --clr-neutral-200: hsl(17 12 89);
+  --clr-neutral-100: hsl(17 41 97);
+  --clr-neutral-0: hsl(0 0 100);
+
+  --clr-light-salmon-500: hsl(22 99 72);
+  --clr-light-salmon-100: hsl(22 100 91);
+  --clr-light-salmon-50: hsl(23 100 97);
+
+  --gradient-text: linear-gradient(
+    107deg,
+    var(--clr-light-salmon-500) -11.37%,
+    var(--clr-neutral-900) 61.84%
+  );
+  --gradient-hover: linear-gradient(
+    90deg,
+    var(--clr-light-salmon-100),
+    var(--clr-light-salmon-50)
+  );
+  --gradient-hover-dark: linear-gradient(
+    90deg,
+    var(--clr-neutral-700),
+    var(--clr-neutral-900)
+  );
+
+  /* Semantic tokens */
+  --heading-text: var(--clr-neutral-900);
+  --heading-text-inverse-bg: var(--clr-neutral-100);
+  --body-text: var(--clr-neutral-700);
+  --button-text: var(--clr-neutral-900);
+  --dark-bg: var(--clr-neutral-900);
+  --button-bg: var(--clr-light-salmon-50);
+  --featured-bg: var(--clr-light-salmon-100);
+  --button-border: var(--clr-neutral-900);
+  --button-border-inverse: var(--clr-neutral-0);
+
+  --ff-heading: "Martian Mono", sans-serif;
+  --ff-body: "Inter", sans-serif;
+
+  --fs-heading-small: 1.25rem;
+  --fs-heading-regular: clamp(2.125rem, 1.243rem + 2.941vw, 3.125rem);
+  --fs-heading-large: clamp(2.375rem, 1.051rem + 4.412vw, 3.875rem);
+
+  --fs-body-xsmall: 0.875rem;
+  --fs-body-small: clamp(1rem, 0.846rem + 0.515vw, 1.175rem);
+  --fs-body-regular: 1.25rem;
+  --fs-body-large: clamp(1.5rem, 0.949rem + 1.838vw, 2.125rem);
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: var(--fs-body-regular);
+  color: var(--body-text);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-heading);
+  color: var(--heading-text);
+}
+
+h1 {
+  font-size: var(--fs-heading-large);
+  font-weight: 700;
+  background-image: var(--gradient-text);
+  background-clip: text;
+  display: inline-block;
+  color: transparent;
+}
+
+h2 {
+  font-size: var(--fs-heading-regular);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--fs-heading-small);
+}

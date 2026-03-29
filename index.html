@@ -23,7 +23,7 @@
         </header>
 
         <section class="sidebar hero">
-          <div data-flow="section-small">
+          <div data-flow="small">
             <h1>Join the ultimate tech book club</h1>
 
             <p>
@@ -69,10 +69,10 @@
 
       <main class="content-grid" data-flow="page">
         <section class="sidebar" data-layout="flipped">
-          <div data-flow="section-small">
+          <div data-flow="small">
             <h2>Read together, grow together</h2>
 
-            <ul>
+            <ul class="checked-list" data-flow="small">
               <li>Monthly curated tech reads selected by industry experts</li>
               <li>Virtual and in-person meetups for deep-dive discussions</li>
               <li>Early access to new tech book releases</li>
@@ -86,28 +86,35 @@
           />
         </section>
 
-        <section class="sidebar">
-          <div data-flow="section-small">
-            <h2>Not your average book club</h2>
+        <section class="value-prop sidebar">
+          <div data-flow="small">
+            <h2>
+              Not your average book <span class="circled">club</span>
+              <img
+                class="circle"
+                src="assets/images/pattern-circle.png"
+                alt=""
+              />
+            </h2>
 
             <p>
-              Connect with a community that speaks your language - from Python
-              to TypeScript and everything in between. Our discussions blend
-              technical depth with practical applications.
+              Connect with a community that speaks your language &mdash; from
+              <strong>Python</strong> to <strong>TypeScrip</strong>t and
+              everything in between. Our discussions blend technical depth with
+              practical applications.
             </p>
           </div>
 
           <img
             src="assets/images/image-not-average-desktop.webp"
+            class="section-image"
             alt="people around a coffee table discussing books"
           />
+
+          <img src="assets/images/logos-tech.svg" class="tech-icons" alt="" />
         </section>
 
-        <section
-          data-flow="section-large"
-          data-bg="featured"
-          data-bg-pattern="grid"
-        >
+        <section data-flow="large" data-bg="featured" data-bg-pattern="grid">
           <h2 data-layout="center">Your tech reading journey</h2>
 
           <ol>
@@ -118,7 +125,7 @@
           </ol>
         </section>
 
-        <section data-flow="section-large">
+        <section data-flow="large">
           <h2 data-layout="center">Membership options</h2>
 
           <ul>
@@ -128,7 +135,7 @@
                   <h3>Starter</h3>
                   <p><strong>$19</strong>/month</p>
                 </header>
-                <ul>
+                <ul class="checked-list">
                   <li>1 book/month</li>
                   <li>Online forums</li>
                 </ul>
@@ -142,7 +149,7 @@
                   <h3>Pro</h3>
                   <p><strong>$29</strong>/month</p>
                 </header>
-                <ul>
+                <ul class="checked-list">
                   <li>2 books/month</li>
                   <li>Virtual meetups</li>
                 </ul>
@@ -156,7 +163,7 @@
                   <h3>Enterprise</h3>
                   <p><strong>Custom</strong></p>
                 </header>
-                <ul>
+                <ul class="checked-list">
                   <li>Team access</li>
                   <li>Private sessions</li>
                 </ul>
@@ -166,7 +173,7 @@
           </ul>
         </section>
 
-        <section data-layout="center" data-flow="section-small">
+        <section data-layout="center" data-flow="small">
           <div class="stars">
             <img src="assets/images/icon-star.svg" alt="" />
             <img src="assets/images/icon-star.svg" alt="" />
@@ -185,7 +192,7 @@
       </main>
 
       <footer class="content-grid">
-        <div data-flow="section-small" data-layout="center">
+        <div data-flow="small" data-layout="center">
           <h2>Ready to debug your reading list?</h2>
 
           <a href="#" class="btn" data-bg="dark">

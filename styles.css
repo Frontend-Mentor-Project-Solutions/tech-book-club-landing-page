@@ -67,6 +67,7 @@ ul,
 ol {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 /* Set core body defaults */
@@ -193,6 +194,7 @@ h1 {
 h2 {
   font-size: var(--fs-heading-regular);
   font-weight: 600;
+  text-wrap: balance;
 }
 
 h3 {
@@ -201,6 +203,10 @@ h3 {
 
 blockquote {
   font-size: var(--fs-body-large);
+  font-weight: 600;
+}
+
+strong {
   font-weight: 600;
 }
 
@@ -232,17 +238,22 @@ hr {
 
 .sidebar {
   --sidebar-gap: 4rem;
+  --col-min-width: 26rem;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--col-min-width)), 1fr)
+  );
   gap: var(--sidebar-gap);
   place-items: center;
 }
 
-[data-flow="section-small"] > * + * {
+[data-flow="small"] > * + * {
   margin-block-start: 1.5rem;
 }
 
-[data-flow="section-large"] > * + * {
+[data-flow="large"] > * + * {
   margin-block-start: clamp(1.5rem, -0.706rem + 7.353vw, 4rem);
 }
 
@@ -306,6 +317,18 @@ footer {
   align-items: center;
 }
 
+[data-layout="flipped"] {
+  container-type: inline-size;
+
+  img {
+    order: -1;
+
+    @container (max-width: 56rem) {
+      order: 0;
+    }
+  }
+}
+
 /* components */
 
 a.btn,
@@ -356,6 +379,59 @@ button {
 
 .stars {
   display: flex;
+}
+
+.checked-list {
+  list-style: none;
+
+  li {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    &::before {
+      content: "";
+      width: 1.75rem;
+      height: 1.75rem;
+      background-image: url("assets/images/icon-check.svg");
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.circled {
+  anchor-name: --circle;
+}
+
+.circle {
+  position: absolute;
+  position-anchor: --circle;
+  position-area: center;
+  transform: scale(1.25);
+}
+
+.section-image {
+  anchor-name: --techs;
+}
+
+.tech-icons {
+  --anchor-offset: 40px;
+  position: absolute;
+  position-anchor: --techs;
+  right: calc(anchor(left) - var(--anchor-offset));
+  bottom: calc(anchor(bottom) + calc(var(--anchor-offset) / 2));
+  position-try-fallbacks: --right;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+@position-try --right {
+  left: calc(anchor(right) - calc(4 * var(--anchor-offset)));
+  right: auto;
 }
 
 [data-bg="featured"] {

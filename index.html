@@ -114,7 +114,12 @@
           <img src="assets/images/logos-tech.svg" class="tech-icons" alt="" />
         </section>
 
-        <section data-flow="large" data-bg="featured" data-bg-pattern="grid">
+        <section
+          class="how-it-works"
+          data-flow="large"
+          data-bg="featured"
+          data-bg-pattern="grid"
+        >
           <h2 data-layout="center">Your tech reading journey</h2>
 
           <ol>
@@ -125,16 +130,20 @@
           </ol>
         </section>
 
-        <section data-flow="large">
+        <section class="membership-options narrow" data-flow="large">
           <h2 data-layout="center">Membership options</h2>
 
           <ul>
             <li>
-              <article>
-                <header>
-                  <h3>Starter</h3>
-                  <p><strong>$19</strong>/month</p>
-                </header>
+              <article data-flow="small">
+                <h3>Starter</h3>
+                <p>
+                  <strong>&dollar;19</strong>
+                  <span>/month</span>
+                </p>
+
+                <hr />
+
                 <ul class="checked-list">
                   <li>1 book/month</li>
                   <li>Online forums</li>
@@ -144,11 +153,15 @@
             </li>
 
             <li data-bg="featured">
-              <article>
-                <header>
-                  <h3>Pro</h3>
-                  <p><strong>$29</strong>/month</p>
-                </header>
+              <article data-flow="small">
+                <h3>Pro</h3>
+                <p>
+                  <strong>&dollar;29</strong>
+                  <span>/month</span>
+                </p>
+
+                <hr />
+
                 <ul class="checked-list">
                   <li>2 books/month</li>
                   <li>Virtual meetups</li>
@@ -158,11 +171,12 @@
             </li>
 
             <li>
-              <article>
-                <header>
-                  <h3>Enterprise</h3>
-                  <p><strong>Custom</strong></p>
-                </header>
+              <article data-flow="small">
+                <h3>Enterprise</h3>
+                <p><strong>Custom</strong></p>
+
+                <hr />
+
                 <ul class="checked-list">
                   <li>Team access</li>
                   <li>Private sessions</li>
@@ -173,7 +187,7 @@
           </ul>
         </section>
 
-        <section data-layout="center" data-flow="small">
+        <section class="narrow" data-layout="center" data-flow="small">
           <div class="stars">
             <img src="assets/images/icon-star.svg" alt="" />
             <img src="assets/images/icon-star.svg" alt="" />
@@ -192,7 +206,7 @@
       </main>
 
       <footer class="content-grid">
-        <div data-flow="small" data-layout="center">
+        <div class="narrow" data-flow="small" data-layout="center fixed">
           <h2>Ready to debug your reading list?</h2>
 
           <a href="#" class="btn" data-bg="dark">

@@ -310,6 +310,7 @@ footer {
   color: var(--body-text-inverse);
   padding-block-start: clamp(3rem, 2rem + 3.333vw, 5rem);
   border-radius: var(--border-radius-xlarge) var(--border-radius-xlarge) 0 0;
+  container-type: inline-size;
 
   h2 {
     color: var(--heading-text-inverse);
@@ -333,7 +334,10 @@ footer {
     flex-basis: 0;
     flex-grow: 999;
     min-inline-size: 80%;
-    /* TODO: text align center when container wraps */
+
+    @container (max-width: 431px) {
+      text-align: center;
+    }
   }
 
   ul {

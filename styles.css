@@ -46,6 +46,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -394,6 +395,7 @@ section.how-it-works {
     font-family: var(--ff-heading);
     font-size: var(--fs-body-small);
     font-weight: 600;
+    color: var(--heading-text);
     flex: 1;
     position: relative;
 
@@ -481,6 +483,7 @@ button {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
 
   color: var(--button-text);
   background-color: var(--button-bg);
@@ -494,10 +497,41 @@ button {
   max-inline-size: fit-content;
   gap: 0.8rem;
 
+  > * {
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hover);
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    border-radius: inherit;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--clr-neutral-700);
+    outline-offset: 2px;
+  }
+
   &[data-bg="dark"] {
     background-color: transparent;
     color: currentColor;
     border-color: currentColor;
+
+    &::before {
+      background: var(--gradient-hover-dark);
+    }
+
+    &:focus-visible {
+      outline-color: var(--clr-neutral-100);
+    }
   }
 }
 

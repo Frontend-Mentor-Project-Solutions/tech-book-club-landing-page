@@ -535,6 +535,20 @@ button {
   }
 }
 
+[popover] {
+  border: 2px solid var(--button-border);
+  background-image: var(--gradient-featured-bg);
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: var(--border-radius-regular);
+
+  &:popover-open {
+    inset: unset;
+    right: 5px;
+    top: 5px;
+  }
+}
+
 .social-proof {
   --image-width: 110px;
 
